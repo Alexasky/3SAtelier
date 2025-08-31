@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, MapPin } from "lucide-react"
+import OpeningBanner from './opening-banner'
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -16,13 +17,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[url('/modern-sewing-workspace-with-natural-light.png')] bg-cover bg-center opacity-20"></div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-        <div className="bg-accent/90 backdrop-blur-sm rounded-2xl p-8 mb-8 inline-block">
-          <div className="flex items-center justify-center space-x-2 text-accent-foreground mb-2">
-            <Calendar className="w-5 h-5" />
-            <span className="font-semibold">Торжественное открытие</span>
-          </div>
-          <div className="text-2xl font-bold text-accent-foreground">5 сентября, 12:00</div>
-        </div>
+        <OpeningBanner />
 
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
           Добро пожаловать в <span className="text-secondary-foreground">3S Atelier</span>
