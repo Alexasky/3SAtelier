@@ -17,7 +17,7 @@ export default function OpeningModal() {
   }, []);
 
   const setClosedCookie = () => {
-    const base = "opening-modal-closed=1; Max-Age=31536000; Path=/; SameSite=Lax";
+    const base = "opening-modal-closed=1;Path=/; SameSite=Lax";
     const secure =
       typeof window !== "undefined" && location.protocol === "https:" ? "; Secure" : "";
     document.cookie = base + secure;

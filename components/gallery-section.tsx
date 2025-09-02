@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image";
 
 export function GallerySection() {
   const galleryImages = [
@@ -43,12 +44,14 @@ export function GallerySection() {
           {galleryImages.map((image, index) => (
             <Card key={index} className="bg-card border-border overflow-hidden hover:shadow-lg transition-shadow p-0">
               <CardContent className="p-0">
-                <div
-                  className="h-64 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${image.src}')` }}
-                  role="img"
-                  aria-label={image.alt}
-                ></div>
+                <Image                  
+                  src={image.src}
+                  alt={image.alt}
+                  width={600}
+                  height={600}
+                  priority
+                  className='w-full object-cover'
+                />
               </CardContent>
             </Card>
           ))}

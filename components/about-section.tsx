@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Users, Scissors } from "lucide-react"
+import Image from 'next/image'
 
 export function AboutSection() {
   return (
@@ -49,7 +50,14 @@ export function AboutSection() {
 
           <Card className="bg-primary border-border">
             <CardContent className="p-8">
-              <div className="bg-[url('/cozy-sewing-workspace-with-natural-lighting.png')] bg-cover bg-center h-64 rounded-lg mb-6"></div>
+              <Image 
+                src={'/cozy-sewing-workspace-with-natural-lighting.png'} 
+                alt={'Творческая мастерская'}
+                width={500}
+                height={256}
+                priority
+                className='h-64 mb-6 object-cover w-full'
+              />
               <h4 className="text-xl font-semibold text-card-foreground mb-4">Посетите наше пространство</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>

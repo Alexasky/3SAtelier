@@ -13,10 +13,10 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary/20 to-primary/30">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary/20 to-primary/30 pb-20">
       <div className="absolute inset-0 bg-[url('/modern-sewing-workspace-with-natural-light.png')] bg-cover bg-center opacity-20"></div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 mt-[80px]">
         <OpeningBanner />
 
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">

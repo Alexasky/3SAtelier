@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Scissors, Settings, GraduationCap, Wrench, Camera, Calendar } from "lucide-react"
+import { Scissors, Settings, GraduationCap, Wrench, Camera, Calendar, Phone } from "lucide-react"
 
 export function ServicesSection() {
   const services = [
@@ -77,7 +77,12 @@ export function ServicesSection() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Свяжитесь с нами для уточнения цен и доступности</p>
-          <p className="text-lg font-semibold text-foreground">Телефон: +7 9045256425</p>
+          <div className='flex items-center justify-center gap-1'>
+            <Phone/>
+            <p className="text-2xl font-semibold text-foreground">
+              Телефон: +7 9045256425
+            </p>
+          </div>          
         </div>
       </div>
     </section>
