@@ -1,8 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, MapPin } from "lucide-react"
+import { Clock, MapPin } from "lucide-react"
 import OpeningBanner from './opening-banner'
+import Image from 'next/image'
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -13,8 +14,15 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary/20 to-primary/30 pb-20">
-      <div className="absolute inset-0 bg-[url('/modern-sewing-workspace-with-natural-light.png')] bg-cover bg-center opacity-20"></div>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary/20 to-primary/30 pb-20 overflow-hidden">
+      <Image
+        src="/modern-sewing-workspace-with-natural-light.png"
+        alt="Креативное коворкинг-пространство"
+        fill
+        className="object-cover opacity-20"
+        priority
+        sizes="100vw"
+      />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 mt-[80px]">
         <OpeningBanner />
