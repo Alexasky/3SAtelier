@@ -1,8 +1,8 @@
-'use client';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Scissors, Settings, GraduationCap, Wrench, Camera, Calendar, Phone } from "lucide-react"
 import { motion } from 'framer-motion'
+import { FadeInSection } from './fade-in-section';
 
 export function ServicesSection() {
   const services = [
@@ -45,55 +45,50 @@ export function ServicesSection() {
   ]
 
   return (
-    <motion.section 
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
-      id="services" 
-      className="py-20 bg-secondary/10"
-    >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Наши услуги и цены</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Всё, что нужно для воплощения ваших творческих идей: современное оборудование, опытные наставники и поддержка нашего дружного сообщества.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-4">
-                  {service.icon}
-                  <CardTitle className="text-xl text-card-foreground">{service.title}</CardTitle>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <Badge key={featureIndex} variant="secondary" className="bg-secondary text-secondary-foreground">
-                      {feature}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">Свяжитесь с нами для уточнения цен и доступности</p>
-          <div className='flex items-center justify-center gap-1'>
-            <Phone size={30} className='mt-1'/>
-            <p className="text-2xl font-semibold text-foreground">
-               +7 9045256425
+    <FadeInSection>
+      <section id="services" className="py-20 bg-secondary/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Наши услуги и цены</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+              Всё, что нужно для воплощения ваших творческих идей: современное оборудование, опытные наставники и поддержка нашего дружного сообщества.
             </p>
-          </div>          
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center space-x-3 mb-4">
+                    {service.icon}
+                    <CardTitle className="text-xl text-card-foreground">{service.title}</CardTitle>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <Badge key={featureIndex} variant="secondary" className="bg-secondary text-secondary-foreground">
+                        {feature}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">Свяжитесь с нами для уточнения цен и доступности</p>
+            <div className='flex items-center justify-center gap-1'>
+              <Phone size={30} className='mt-1'/>
+              <p className="text-2xl font-semibold text-foreground">
+                +7 9045256425
+              </p>
+            </div>          
+          </div>
         </div>
-      </div>
-    </motion.section>
+      </section>
+    </FadeInSection>
   )
 }
