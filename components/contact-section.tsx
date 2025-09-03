@@ -22,7 +22,7 @@ export function ContactSection() {
             <div>
               <Card className="bg-primary border-border mb-8">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-card-foreground">Контактная информация</CardTitle>
+                  <CardTitle className="text-2xl text-card-foreground"><h3>Контактная информация</h3></CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-start space-x-4">
