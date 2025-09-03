@@ -87,9 +87,9 @@ export function ServicesSection() {
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Свяжитесь с нами для уточнения цен и доступности</p>
           <div className='flex items-center justify-center gap-1'>
-            <Phone/>
+            <Phone size={30} className='mt-1'/>
             <p className="text-2xl font-semibold text-foreground">
-              Телефон: +7 9045256425
+               +7 9045256425
             </p>
           </div>          
         </div>
