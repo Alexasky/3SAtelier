@@ -1,6 +1,8 @@
+'use client';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Scissors, Settings, GraduationCap, Wrench, Camera, Calendar, Phone } from "lucide-react"
+import { motion } from 'framer-motion'
 
 export function ServicesSection() {
   const services = [
@@ -43,7 +45,14 @@ export function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="py-20 bg-secondary/10">
+    <motion.section 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      id="services" 
+      className="py-20 bg-secondary/10"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Наши услуги и цены</h2>
@@ -85,6 +94,6 @@ export function ServicesSection() {
           </div>          
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

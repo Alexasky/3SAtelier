@@ -1,13 +1,20 @@
-"use client"
-
+'use client';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Clock, Mail, MessageCircle, Instagram } from "lucide-react"
 import ContactForm from './contact-form'
+import { motion } from 'framer-motion'
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-background">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      id="contact" 
+      className="py-20 bg-background"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Свяжитесь с нами</h2>
@@ -108,6 +115,6 @@ export function ContactSection() {
           </Card>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

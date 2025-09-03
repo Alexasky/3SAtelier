@@ -1,4 +1,6 @@
+'use client';
 import { Card, CardContent } from "@/components/ui/card"
+import { motion } from 'framer-motion';
 import Image from "next/image";
 
 export function GallerySection() {
@@ -30,7 +32,14 @@ export function GallerySection() {
   ]
 
   return (
-    <section id="gallery" className="py-20 bg-secondary/10">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      id="gallery" 
+      className="py-20 bg-secondary/10"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Галерея</h2>
@@ -70,6 +79,6 @@ export function GallerySection() {
           </Card>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

@@ -1,10 +1,19 @@
+'use client';
 import { Card, CardContent } from "@/components/ui/card"
+import { motion } from 'framer-motion'
 import { Heart, Users, Scissors } from "lucide-react"
 import Image from 'next/image'
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-background">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      id="about" 
+      className="py-20 bg-background"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">3S Atelier</h2>
@@ -19,7 +28,7 @@ export function AboutSection() {
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6">Наша миссия</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Мы верим в силу сообщества и творчества. Наш ателье предлагает оборудование профессионального уровня, 
+              Мы верим в силу сообщества и творчества. Наше ателье предлагает оборудование профессионального уровня, 
               удобное рабочее пространство и поддерживающую атмосферу, где как начинающие, так и опытные мастера 
               могут развивать свою страсть к текстилю и дизайну.
             </p>
@@ -72,6 +81,6 @@ export function AboutSection() {
           </Card>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
