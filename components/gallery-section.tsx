@@ -44,15 +44,15 @@ export function GallerySection() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
-              <Card key={index} className="bg-card border-border overflow-hidden hover:shadow-lg transition-shadow p-0">
-                <CardContent className="p-0">
+              <Card key={index} className="bg-card border-border overflow-hidden hover:shadow-lg transition-shadow p-0 h-64">
+                <CardContent className="relative w-full h-full p-0">
                   <Image                  
                     src={image.src}
                     alt={image.alt}
-                    width={600}
-                    height={600}
+                    fill
                     priority
-                    className='w-full object-cover'
+                    className='object-cover'
+                    sizes='400'
                   />
                 </CardContent>
               </Card>
