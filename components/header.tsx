@@ -31,7 +31,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            {/* <Image src="/logo.png" alt="3S Atelier Logo" width={50} height={50} className="rounded-lg" /> */}
+            <Image src="/logo_opt.svg" alt="3S Atelier Logo" width={50} height={50} className="rounded-lg bg-[#EAD6F2]" />
             <div>
               <h1 className="text-xl font-bold text-foreground">3S ATELIER</h1>
               <p className="text-sm text-muted-foreground">SEW. SHARE. SPACE.</p>
