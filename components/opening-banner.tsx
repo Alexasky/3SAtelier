@@ -62,7 +62,7 @@ export default function OpeningModal() {
                 <span className="font-semibold">Торжественное открытие</span>
               </div>
               <div className="text-2xl font-bold text-accent-foreground">
-                5 сентября, 12:00
+                6 сентября, 12:00
               </div>
             </div>
           </motion.div>
