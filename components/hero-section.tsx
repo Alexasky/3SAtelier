@@ -25,7 +25,7 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 mt-[80px]">
-        <OpeningBanner />
+        {/* <OpeningBanner /> */}
 
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
           Добро пожаловать в <span className="text-secondary-foreground">3S Atelier</span>

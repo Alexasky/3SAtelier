@@ -93,21 +93,6 @@ export function ContactSection() {
               </CardContent>
             </Card>
           </div>
-
-          <div className="mt-12">
-            <Card className="bg-secondary/20 border-secondary/30">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-foreground mb-4">🎉 Специальное предложение к открытию</h3>
-                <p className="text-lg text-muted-foreground mb-4">
-                  Присоединяйтесь к нам <strong>6 сентября в 12:00</strong> на празднование торжественного открытия!
-                </p>
-                <p className="text-muted-foreground">
-                  Специальные скидки, экскурсии, мини-мастер-классы и угощения. 
-                  Приходите познакомиться с нашим сообществом и узнать, что такое 3S Atelier.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
     </FadeInSection>
