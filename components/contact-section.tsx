@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Clock, Mail, MessageCircle, Instagram } from "lucide-react"
 import ContactForm from './contact-form'
 import { FadeInSection } from './fade-in-section'
+import Link from 'next/link';
 
 export function ContactSection() {
   return (
@@ -70,16 +71,15 @@ export function ContactSection() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex space-x-4">
-                    <Button variant="outline" size="sm" className="border-accent/50 bg-transparent cursor-pointer">
+                    <Link href="https://t.me/atelier3s" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all border-accent/50 bg-transparent cursor-pointer border shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md gap-1.5 px-3">
                       <MessageCircle className="w-4 h-4 mr-2" />
-                      Telegram
-                    </Button>
+                      Telegram    
+                    </Link>
                     <Button variant="outline" size="sm" className="border-accent/50 bg-transparent cursor-pointer">
                       <Instagram className="w-4 h-4 mr-2" />
                       Instagram
                     </Button>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-4">Ссылки на соцсети скоро появятся!</p>
                 </CardContent>
               </Card>
             </div>
