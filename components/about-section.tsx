@@ -58,7 +58,7 @@ export function AboutSection() {
                   width={500}
                   height={256}
                   priority
-                  className='h-64 mb-6 object-cover w-full'
+                  className='h-64 mb-6 object-cover [object-position:50%_36%] w-full'
                 />
                 <h4 className="text-xl font-semibold text-card-foreground mb-4">Посетите наше пространство</h4>
                 <div className="space-y-2 text-muted-foreground">

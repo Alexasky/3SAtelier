@@ -23,11 +23,10 @@ export function HeroSection() {
         priority
         sizes="100vw"
       />
-
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 mt-[80px]">
         {/* <OpeningBanner /> */}
 
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance text-foreground">
           Добро пожаловать в <span className="text-secondary-foreground">3S Atelier</span>
         </h1>
 
@@ -49,9 +48,9 @@ export function HeroSection() {
         <Button
           onClick={scrollToContact}
           size="lg"
-          className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-3 cursor-pointer"
+          className="bg-accent text-accent-foreground text-lg px-8 py-3 cursor-pointer group hover:scale-105 hover:bg-accent/80 transform transition-all duration-200"
         >
-          Присоединяйтесь
+          <span className='block group-hover:scale-100 transform transition-transform duration-200'>Присоединяйтесь</span>
         </Button>
       </div>
     </section>
