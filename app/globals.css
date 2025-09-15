@@ -46,6 +46,22 @@
   --sidebar-accent-foreground: oklch(0.2 0 0);
   --sidebar-border: oklch(0.93 0.02 280);
   --sidebar-ring: oklch(0.95 0.02 150);
+  --line-height-3: .75rem;
+  /* 12px */
+  --line-height-4: 1rem;
+  /* 16px */
+  --line-height-5: 1.25rem;
+  /* 20px */
+  --line-height-6: 1.5rem;
+  /* 24px */
+  --line-height-7: 1.75rem;
+  /* 28px */
+  --line-height-8: 2rem;
+  /* 32px */
+  --line-height-9: 2.25rem;
+  /* 36px */
+  --line-height-10: 2.5rem;
+  /* 40px */
 }
 
 .dark {

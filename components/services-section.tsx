@@ -7,7 +7,7 @@ import { FadeInSection } from './fade-in-section';
 export function ServicesSection() {
   const services = [
     {
-      icon: <Scissors className="w-8 h-8 text-accent" />,
+      icon: <Scissors className="w-8 h-[1lh] text-accent" />,
       title: "Доступ к швейным машинам",
       description: "Бытовые и промышленные швейные машины для аренды на час или день – идеально для ваших проектов.",
       features: ["Бытовые машины", "Промышленные машины", "Оверлок", "Коверстич"],
@@ -59,8 +59,10 @@ export function ServicesSection() {
             {services.map((service, index) => (
               <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="flex items-center space-x-3 mb-4">
-                    {service.icon}
+                  <div className="flex items-start space-x-3 mb-4 text-xs/7">
+                    <span className="flex item-center h-[1lh]">
+                      {service.icon}
+                    </span>
                     <CardTitle className="text-xl text-card-foreground">{service.title}</CardTitle>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">{service.description}</p>
