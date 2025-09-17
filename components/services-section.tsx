@@ -9,9 +9,9 @@ export function ServicesSection() {
   const popularServices = [
     { name: "Подшив джинсов", price: "500 ₽" },
     { name: "Ушивание юбки", price: "от 800 ₽" },
-    { name: "Пошив платья на заказ", price: "от 8 000 ₽" },
+    { name: "Пошив платья", price: "от 8 000 ₽" },
     { name: "Замена молнии", price: "от 700 ₽" },
-    { name: "Аренда на 1 час с поддержкой", price: "1 000 ₽" },
+    { name: "Аренда на 1 час", price: "1 000 ₽" },
   ]
 
   const mainMembershipPlans = [
@@ -31,10 +31,10 @@ export function ServicesSection() {
       popular: true,
     },
     {
-      title: "Студия на день",
+      title: "Ателье на день",
       price: "от 5 000 ₽",
       duration: "за день",
-      features: ["Полный доступ к студии", "Приватное рабочее место", "Все оборудование", "Фотозона"],
+      features: ["Полный доступ к пространству", "Приватное рабочее место", "Все оборудование", "Фотозона"],
       icon: <Zap className="w-6 h-6 text-accent" />,
     },
   ]
@@ -158,6 +158,43 @@ export function ServicesSection() {
       ],
     },
     {
+      title: "Постельное бельё",
+      items: [
+        { service: "Пододеяльник 1.5/2", price: "500/700 ₽" },
+        { service: "Пододеяльник с застёжкой 1.5/2", price: "800/1000 ₽" },
+        { service: "Простыня 1.5/2", price: "400/500 ₽" },
+        { service: "Простыня на резинке", price: "от 1000 ₽" },
+        { service: "Наволочка с запахом", price: "от 300 ₽" },
+        { service: "Наволочка с застёжкой", price: "от 400 ₽" },
+        { service: "Наволочка с ушками", price: "от 600 ₽" },
+      ],
+    },
+    {
+      title: "Аренда",
+      items: [
+        { service: "1 час с поддержкой", price: "1000 ₽" },
+        { service: "Индивидуальная консультация", price: "1 500 ₽/час" },
+        { service: "Аренда примерочной", price: "500 ₽/час" },
+        { service: "Фотозона", price: "от 5000 ₽/час" },
+      ],
+    },
+    {
+      title: "Абонементы",
+      items: [
+        { service: "10 часов", price: "3500 ₽ (1 неделя)" },
+        { service: "60 часов", price: "18000 ₽ (1 месяц)" },
+        { service: "120 часов", price: "33000 ₽ (2 месяца)" },
+      ],
+    },
+    {
+      title: "Услуги раскройного стола",
+      items: [
+        { service: "Бумажная выкройка", price: "от 500 ₽" },
+        { service: "Раскрой ткани", price: "от 1000 ₽" },
+        { service: "Аренда журнала", price: "500 ₽" },
+      ],
+    },
+    {
       title: "Прочие услуги",
       items: [
         { service: "Штопка", price: "от 500 ₽" },
@@ -168,7 +205,10 @@ export function ServicesSection() {
         { service: "Петля", price: "от 200 ₽" },
         { service: "Пришить погоны", price: "от 600 ₽" },
         { service: "Пришить шеврон", price: "от 250–350 ₽" },
-        { service: "Пошив покрывало", price: "от 8000 ₽" },
+        { service: "Покрывало(пошив)", price: "от 8000 ₽" },
+        { service: "Скатерть простая (пошив)", price: "от 100 ₽/м" },
+        { service: "Скатерть с широким подгибом (пошив)", price: "от 200 ₽/м" },
+        { service: "Обработка срезов с оборкой", price: "от 300 ₽/м" },        
       ],
     },
   ]
@@ -229,7 +269,7 @@ export function ServicesSection() {
               {popularServices.map((service, index) => (
                 <Card key={index} className="text-center bg-accent/5 border-accent/20">
                   <CardContent className="p-4">
-                    <p className="font-medium text-sm mb-2">{service.name}</p>
+                    <p className="font-medium text-xl mb-2">{service.name}</p>
                     <p className="text-accent font-bold">{service.price}</p>
                   </CardContent>
                 </Card>
@@ -273,7 +313,7 @@ export function ServicesSection() {
           </div>
 
           <div className="mb-16">
-            <h4 className="text-xl font-semibold text-center mb-6">Дополнительные aбонементы</h4>
+            <h4 className="text-xl font-semibold text-center mb-6">Дополнительные абонементы</h4>
             <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               {additionalPlans.map((plan, index) => (
                 <Card key={index} className="text-center bg-accent/5 border-accent/20">
@@ -338,23 +378,31 @@ export function ServicesSection() {
 
           <Card className="bg-accent/5 border-accent/20 m-auto mb-8 max-w-4xl">
             <CardHeader>
-              <CardTitle className="text-center">Срочные заказы и наценки</CardTitle>
+              <CardTitle className="text-center text-2xl">Срочные заказы и наценки</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4 text-sm">
-                <div className='flex flex-col gap-1 items-center'>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className='flex flex-col gap-1'>
                   <div className='text-left'>
-                    <p><strong>Срочность:</strong></p>                  
+                    <p><strong>Экспресс-сервис:</strong></p>                  
                     <p>• 24 часа: +20%</p>
                     <p>• 1–2 часа: +50%</p>
                   </div>                  
                 </div>
-                <div className='flex flex-col gap-1 items-center'>
+                <div className='flex flex-col gap-1'>
                   <div className='text-left'>
-                    <p><strong>Особые материалы:</strong></p>
+                    <p><strong>Особенности ткани:</strong></p>
                     <p>• Белые ткани: +25%</p>
-                    <p>• Совмещение рисунка: +30%</p>
+                    <p>• Совпадение узора: +30%</p>
                     <p>• Сложные ткани: +20%</p>
+                  </div>
+                </div>
+                <div className='flex flex-col gap-1'>
+                  <div className='text-left'>
+                    <p><strong>Особенности изделия:</strong></p>
+                    <p>• Длинные изделия: +10%</p>
+                    <p>• Асимметричные изделия: +20%</p>
+                    <p>• Размер выше 58: +10%</p>
                   </div>
                 </div>
               </div>

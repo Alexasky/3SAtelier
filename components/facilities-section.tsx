@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Coffee, Armchair, Ruler, Zap, Camera as Camera2, Shirt } from "lucide-react"
+import { Coffee, Armchair, Ruler, Zap, Camera as Camera2, Shirt, FileText, Scissors, BookOpen } from "lucide-react"
 import { FadeInSection } from './fade-in-section'
 
 export function FacilitiesSection() {
@@ -36,6 +36,24 @@ export function FacilitiesSection() {
     },
   ]
 
+  const cuttingTableServices = [
+    {
+      icon: <FileText className="w-6 h-6 text-accent" />,
+      service: "Бумажная выкройка",
+      price: "от 500 ₽",
+    },
+    {
+      icon: <Scissors className="w-6 h-6 text-accent" />,
+      service: "Раскрой ткани",
+      price: "от 1,000 ₽",
+    },
+    {
+      icon: <BookOpen className="w-6 h-6 text-accent" />,
+      service: "Аренда журнала Burda",
+      price: "500 ₽",
+    },
+  ]
+
   return (
     <FadeInSection>
       <section id="facilities" className="py-20 bg-background">
@@ -48,7 +66,7 @@ export function FacilitiesSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {facilities.map((facility, index) => (
               <Card key={index} className="bg-primary border-border text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-8">
@@ -58,6 +76,21 @@ export function FacilitiesSection() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center mb-8">Услуги раскройного стола</h3>
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              {cuttingTableServices.map((service, index) => (
+                <Card key={index} className="bg-accent/5 border-accent/20 text-center">
+                  <CardContent className="p-6">
+                    <div className="flex justify-center mb-4">{service.icon}</div>
+                    <h4 className="font-semibold mb-2">{service.service}</h4>
+                    <p className="text-accent font-bold">{service.price}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
           <div className="mt-16 text-center">
