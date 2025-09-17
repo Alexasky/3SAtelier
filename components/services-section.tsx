@@ -138,7 +138,7 @@ export function ServicesSection() {
         { service: "Устранение затяжек", price: "150 ₽" },
         { service: "Ремот стрелки", price: "200 ₽" },
         { service: "Кетлёвка (за 1 см)", price: "150 ₽" },
-        { service: "Накладки на локти", price: "1,800 ₽" },
+        { service: "Накладки на локти", price: "1800 ₽" },
       ],
     },
     {
