@@ -7,11 +7,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './
 
 export function ServicesSection() {
   const popularServices = [
-    { name: "Подшив джинсов", price: "1,500 ₽" },
+    { name: "Подшив джинсов", price: "500 ₽" },
     { name: "Ушивание юбки", price: "от 800 ₽" },
-    { name: "Пошив платья на заказ", price: "от 8,000 ₽" },
+    { name: "Пошив платья на заказ", price: "от 8 000 ₽" },
     { name: "Замена молнии", price: "от 700 ₽" },
-    { name: "Аренда на 1 час с поддержкой", price: "1,000 ₽" },
+    { name: "Аренда на 1 час с поддержкой", price: "1 000 ₽" },
   ]
 
   const mainMembershipPlans = [
