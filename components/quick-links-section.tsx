@@ -24,7 +24,7 @@ export function QuickLinksSection() {
       title: "Мастер-классы",
       description: "Изучайте новые техники шитья с опытными наставниками и мастерами",
       icon: GraduationCap,
-      href: "/master-classes",
+      href: "/contact",
       highlight: "от 2 500 ₽",
     },
     {
