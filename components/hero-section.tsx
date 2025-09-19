@@ -14,7 +14,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary/20 to-primary/30 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-brand/50 pb-20 overflow-hidden">
       <Image
         src="/modern-sewing-workspace-with-natural-light.png"
         alt="Креативное коворкинг-пространство"

@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 import { Suspense } from "react"
 import "./globals.css"
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -26,7 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${dmSans.variable} antialiased`}>
         <Suspense fallback={null}>
+          <Header />
           {children}
+          <Footer />
         </Suspense>
       </body>
     </html>

@@ -5,34 +5,34 @@ import { FadeInSection } from './fade-in-section';
 export function GallerySection() {
   const galleryImages = [
     {
-      src: "/modern-sewing-machines-in-bright-workspace.png",
+      src: "/equipment.jpg",
       alt: "Профессиональные швейные машины",
     },
     {
-      src: "/cozy-lounge-area-with-tea-and-coffee-setup.png",
+      src: "/lounge-area.jpg",
       alt: "Уютная лаунж-зона",
     },
     {
-      src: "/cutting-table-with-fabric-and-patterns.png",
+      src: "/cutting-table.jpg",
       alt: "Профессиональные раскройные столы",
     },
     {
-      src: "/bright-workshop-space-with-people-sewing.png",
+      src: "/3satelier-area.jpg",
       alt: "Творческая мастерская в работе",
     },
     {
-      src: "/ironing-station-with-professional-equipment.png",
-      alt: "Зона глажки и отпаривания",
+      src: "/fitting-room.jpg",
+      alt: "Примерочная зона",
     },
     {
-      src: "/photo-zone-with-good-lighting-for-fashion-photogra.png",
-      alt: "Фотозона для готовых проектов",
+      src: "/reception.jpg",
+      alt: "Фронт-деск 3S Atelier",
     },
   ]
 
   return (
     <FadeInSection>
-      <section id="gallery" className="py-20 bg-secondary/10">
+      <section id="gallery" className="py-20 bg-brand/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Галерея</h2>
