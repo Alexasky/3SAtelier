@@ -21,7 +21,7 @@ export function ServicesHero() {
 				sizes="100vw"
 			/>
       <div className="relative max-w-4xl mx-auto text-center z-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Профессиональные услуги ателье</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Услуги ателье</h1>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-balance">
           Экспертный ремонт одежды, индивидуальный пошив и подгонка в Санкт-Петербурге. От простого укорачивания до сложных переделок — мы возвращаем вашим вещам новую жизнь.
         </p>
