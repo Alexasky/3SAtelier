@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "3S Atelier — Шей. Делись. Вдохновляйся.",
   description:
     "Творческое коворкинг-пространство с швейными машинами, мастер-классами и дружным сообществом в Санкт-Петербурге.",
+  other: {
+    "yandex-verification": "fe59a0290de9ce04",
+  },
 }
 
 export default function RootLayout({
