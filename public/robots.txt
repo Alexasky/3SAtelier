@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.3satelier.ru
+
+# Sitemaps
+Sitemap: https://www.3satelier.ru/sitemap.xml
