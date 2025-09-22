@@ -9,11 +9,6 @@ export function ContactInfo() {
       details: ["Парашютная 42, корпус 1", "Приморский район", "Санкт-Петербург, Россия"],
     },
     {
-      icon: Clock,
-      title: "Время работы",
-      details: ["Понедельник – Воскресенье", "11:00 – 20:00"],
-    },
-    {
       icon: Phone,
       title: "Телефон",
       details: ["+7 (904) 525-64-25", "Доступен в рабочее время", "Запись по телефону"],
@@ -33,7 +28,7 @@ export function ContactInfo() {
           <p className="text-lg text-gray-600">У нас есть несколько способов связи — выберите удобный для вас</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactDetails.map((detail, index) => {
             const IconComponent = detail.icon
             return (

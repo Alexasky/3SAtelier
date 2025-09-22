@@ -48,9 +48,7 @@ export function CleaningContact() {
                 <Clock className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold">Часы работы</p>
-                  <p className="text-muted-foreground">Пн–Пт: 9:00–19:00</p>
-                  <p className="text-muted-foreground">Сб: 10:00–17:00</p>
-                  <p className="text-muted-foreground">Вс: выходной</p>
+                  <p className="text-muted-foreground">Ежедневно: 11:00 – 21:00</p>
                 </div>
               </div>
             </CardContent>

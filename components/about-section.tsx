@@ -67,7 +67,7 @@ export function AboutSection() {
                   </p>
                   <p>Приморский район, Санкт-Петербург</p>
                   <p>
-                    <strong>Часы работы:</strong> ежедневно с 10:00 до 21:00
+                    <strong>Часы работы:</strong> ежедневно с 11:00 до 21:00
                   </p>
                 </div>
               </CardContent>

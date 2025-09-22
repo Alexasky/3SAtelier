@@ -5,7 +5,7 @@ export function ContactHero() {
   const highlights = [
     { icon: MapPin, text: "Приморский район" },
     { icon: Phone, text: "+7 904 5256425" },
-    { icon: Clock, text: "11:00 – 20:00" },
+    { icon: Clock, text: "11:00 – 21:00" },
   ]
 
   return (

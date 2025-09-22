@@ -43,7 +43,7 @@ export function ContactSection() {
                     <Clock className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-card-foreground">Часы работы</h4>
-                      <p className="text-muted-foreground">Ежедневно: 11:00 – 20:00</p>
+                      <p className="text-muted-foreground">Ежедневно: 11:00 – 21:00</p>
                     </div>
                   </div>
 

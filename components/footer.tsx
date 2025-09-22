@@ -11,7 +11,7 @@ export function Footer() {
 
           <div className="text-sm text-muted-foreground space-y-1">
             <p>ул. Парашютная, 42, корпус 1, Приморский район, Санкт-Петербург</p>
-            <p>Ежедневно 11:00 – 20:00 | Телефон: +7 9045256425</p>
+            <p>Ежедневно 11:00 – 21:00 | Телефон: +7 9045256425</p>
           </div>
 
           <div className="mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
