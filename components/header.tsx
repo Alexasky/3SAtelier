@@ -98,8 +98,8 @@ export function Header() {
                     href={item.href}
                     className={`block py-2 text-lg transition-colors ${
                       pathname === item.href
-                        ? "text-accent-foreground font-semibold"
-                        : "text-foreground hover:text-accent-foreground"
+                        ? "text-accent font-semibold"
+                        : "text-foreground hover:text-accent"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
