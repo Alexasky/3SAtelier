@@ -20,6 +20,26 @@ export const metadata: Metadata = {
   other: {
     "yandex-verification": "fe59a0290de9ce04",
   },
+  keywords: "химчистка, прачечная, услуги, одежда, Москва, 3S Atelier, Пингвин",
+  openGraph: {
+    title: "3S Atelier – Cleaning & Dry-Cleaning",
+    description: "High-quality cleaning services with Пингвин.",
+    url: "https://3satelier.ru",
+    siteName: "3S Atelier",
+    images: [
+      {
+        url: "https://3satelier.ru/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "3S Atelier Cleaning Services",
+      },
+    ],
+    locale: "ru_RU",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://3satelier.ru",
+  },
 }
 
 export default function RootLayout({
