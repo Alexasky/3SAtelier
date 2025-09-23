@@ -5,6 +5,7 @@ import { Suspense } from "react"
 import "./globals.css"
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import Image from 'next/image'
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -14,32 +15,13 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "3S Atelier — Шей. Делись. Вдохновляйся.",
+  title: "3S Atelier — Ателье и швейный коворкинг в Санкт-Петербурге",
   description:
-    "Творческое коворкинг-пространство с швейными машинами, мастер-классами и дружным сообществом в Санкт-Петербурге.",
+    "3S Atelier — современное ателье и швейный коворкинг в СПб. Пошив и ремонт одежды, аренда швейных машин, мастер-классы и творческое сообщество.",
   other: {
     "yandex-verification": "fe59a0290de9ce04",
   },
-  keywords: "химчистка, прачечная, услуги, одежда, Москва, 3S Atelier, Пингвин",
-  openGraph: {
-    title: "3S Atelier – Cleaning & Dry-Cleaning",
-    description: "High-quality cleaning services with Пингвин.",
-    url: "https://3satelier.ru",
-    siteName: "3S Atelier",
-    images: [
-      {
-        url: "https://3satelier.ru/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "3S Atelier Cleaning Services",
-      },
-    ],
-    locale: "ru_RU",
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://3satelier.ru",
-  },
+  keywords: "ателье в спб, ателье одежды в спб, швейный коворкинг в санкт петербурге, творческое ателье спб, 3S Atelier",
 }
 
 export default function RootLayout({
@@ -48,7 +30,32 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(m,e,t,r,i,k,a){
+                  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                  m[i].l=1*new Date();
+                  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+              })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104253463', 'ym');
+
+              ym(104253463, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+            `,
+          }}
+        />
+        <noscript>
+          <div>
+            <Image
+              src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID"
+              style={{ position: "absolute", left: "-9999px" }}
+              alt=""
+            />
+          </div>
+        </noscript>
+      </head>
       <body className={`font-sans ${dmSans.variable} antialiased`}>
         <Suspense fallback={null}>
           <Header />
