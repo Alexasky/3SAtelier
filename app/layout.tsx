@@ -49,9 +49,10 @@ export default function RootLayout({
         <noscript>
           <div>
             <Image
-              src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID"
+              src="https://mc.yandex.ru/watch/104253463"
               style={{ position: "absolute", left: "-9999px" }}
               alt=""
+              width={100}              
             />
           </div>
         </noscript>
