@@ -5,6 +5,7 @@ import { MapPin, Phone, Clock, Mail, MessageCircle, Instagram } from "lucide-rea
 import ContactForm from './contact-form'
 import { FadeInSection } from './fade-in-section'
 import Link from 'next/link';
+import YandexReviews from './yandexReviews';
 
 export function ContactSection() {
   return (
@@ -19,7 +20,7 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-3 gap-12">
             <div>
               <Card className="bg-primary border-border mb-8">
                 <CardHeader>
@@ -90,6 +91,14 @@ export function ContactSection() {
               </CardHeader>
               <CardContent>
                 <ContactForm />
+              </CardContent>
+            </Card>
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-2xl text-card-foreground">Отзывы</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <YandexReviews />
               </CardContent>
             </Card>
           </div>
