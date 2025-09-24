@@ -31,16 +31,21 @@ jobs:
           echo "CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }}" >> .env.production
           npm run build
 
-      # 5️⃣ Deploy built files to Hostland
-      - name: Deploy to Hostland via SCP
+      # 4️⃣ List files for debugging
+      - name: List project files
+        run: ls -R
+
+      # 5️⃣ Deploy built files to Hostland via SCP
+      - name: Deploy built files to Hostland
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOSTLAND_HOST }}
           username: ${{ secrets.HOSTLAND_USER }}
           port: ${{ secrets.HOSTLAND_PORT }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
-          source: ".next public server.js package.json"
-          target: "/home/host1261920/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
+          passphrase: ${{ secrets.HOSTLAND_SSH_PASSPHRASE }}
+          source: ".next/ public/ server.js package.json"
+          target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
 
       # 6️⃣ Install production dependencies on Hostland
       - name: Install production dependencies
