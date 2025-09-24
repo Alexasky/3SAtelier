@@ -1,0 +1,66 @@
+name: 🚀 Deploy Next.js to Hostland
+
+on:
+  push:
+    branches:
+      - main # Trigger deployment on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Build Next.js with environment variables
+      - name: Build Next.js with env
+        run: |
+          echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> .env.production
+          echo "CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }}" >> .env.production
+          npm run build
+
+      # 5️⃣ Deploy built files to Hostland
+      - name: Deploy to Hostland via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOSTLAND_HOST }}
+          username: ${{ secrets.HOSTLAND_USER }}
+          key: ${{ secrets.HOSTLAND_SSH_KEY }}
+          port: 1024
+          source: ".next,public,package.json,server.js"
+          target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
+
+      # 6️⃣ Install production dependencies on Hostland
+      - name: Install production dependencies
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOSTLAND_HOST }}
+          username: ${{ secrets.HOSTLAND_USER }}
+          key: ${{ secrets.HOSTLAND_SSH_KEY }}
+          port: 1024
+          script: |
+            /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/bin/node \
+              /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/lib/node_modules/npm/bin/npm-cli.js install --omit=dev
+
+      # 7️⃣ Restart your app on Hostland (Passenger)
+      - name: Restart app
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOSTLAND_HOST }}
+          username: ${{ secrets.HOSTLAND_USER }}
+          key: ${{ secrets.HOSTLAND_SSH_KEY }}
+          port: 1024
+          script: |
+            touch /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next/tmp/restart.txt
