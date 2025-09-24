@@ -32,8 +32,8 @@ jobs:
           npm run build
 
       # 4️⃣ List files for debugging
-      - name: List project files
-        run: ls -R
+      - name: List all files including hidden
+        run: ls -laR
 
       # 5️⃣ Deploy built files to Hostland via SCP
       - name: Deploy built files to Hostland
@@ -44,7 +44,7 @@ jobs:
           port: ${{ secrets.HOSTLAND_PORT }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           passphrase: ${{ secrets.HOSTLAND_SSH_PASSPHRASE }}
-          source: ".next/ public/ server.js package.json"
+          source: ".next public server.js package.json"
           target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
 
       # 6️⃣ Install production dependencies on Hostland
