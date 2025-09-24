@@ -37,10 +37,10 @@ jobs:
         with:
           host: ${{ secrets.HOSTLAND_HOST }}
           username: ${{ secrets.HOSTLAND_USER }}
+          port: ${{ secrets.HOSTLAND_PORT }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
-          port: 1024
-          source: ".next,public,package.json,server.js"
-          target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
+          source: ".next public server.js package.json"
+          target: "/home/host1261920/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
 
       # 6️⃣ Install production dependencies on Hostland
       - name: Install production dependencies
