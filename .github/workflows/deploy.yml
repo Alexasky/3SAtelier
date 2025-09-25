@@ -31,17 +31,11 @@ jobs:
           echo "CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }}" >> .env.production
           npm run build
 
-      # 5️⃣ List files for debugging before deploy
-      - name: List local project files
-        run: |
-          echo "== ROOT =="
-          ls -lah
-          echo "== .next =="
-          ls -lah .next || true
-          echo "== public =="
-          ls -lah public || true
+      # 4️⃣ List files for debugging
+      - name: List all files including hidden
+        run: ls -laR
 
-      # 6️⃣ Deploy built files to Hostland via SCP (with debug)
+      # 5️⃣ Deploy built files to Hostland via SCP
       - name: Deploy built files to Hostland
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -50,43 +44,28 @@ jobs:
           port: ${{ secrets.HOSTLAND_PORT }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           passphrase: ${{ secrets.HOSTLAND_SSH_PASSPHRASE }}
-          source: "./.next/ public server.js package.json"
+          source: ".next public package.json"
           target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
-          debug: true
 
-      # 7️⃣ Verify files on the server
-      - name: Check files on server
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.HOSTLAND_HOST }}
-          username: ${{ secrets.HOSTLAND_USER }}
-          key: ${{ secrets.HOSTLAND_SSH_KEY }}
-          port: ${{ secrets.HOSTLAND_PORT }}
-          script: |
-            echo "== PROJECT DIR =="
-            ls -lah /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next
-            echo "== .next =="
-            ls -lah /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next/.next || true
-
-      # 8️⃣ Install production dependencies on Hostland
+      # 6️⃣ Install production dependencies on Hostland
       - name: Install production dependencies
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.HOSTLAND_HOST }}
           username: ${{ secrets.HOSTLAND_USER }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
-          port: ${{ secrets.HOSTLAND_PORT }}
+          port: 1024
           script: |
             /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/bin/node \
               /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/lib/node_modules/npm/bin/npm-cli.js install --omit=dev
 
-      # 9️⃣ Restart your app on Hostland (Passenger)
+      # 7️⃣ Restart your app on Hostland (Passenger)
       - name: Restart app
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.HOSTLAND_HOST }}
           username: ${{ secrets.HOSTLAND_USER }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
-          port: ${{ secrets.HOSTLAND_PORT }}
+          port: 1024
           script: |
             touch /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next/tmp/restart.txt
