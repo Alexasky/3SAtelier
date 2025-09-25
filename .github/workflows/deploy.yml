@@ -40,8 +40,6 @@ jobs:
           ls -lah public || echo "No public"
           echo "== package.json =="
           ls -lah package.json || echo "No package.json"
-          echo "== server.js =="
-          ls -lah server.js || echo "No server.js"
 
       # 5️⃣ Deploy built files to Hostland via SCP
       - name: Deploy built files to Hostland
