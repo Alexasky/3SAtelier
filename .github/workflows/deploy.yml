@@ -31,16 +31,6 @@ jobs:
           echo "CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }}" >> .env.production
           npm run build
 
-      # 4️⃣ List files for debugging
-      - name: Verify deploy sources
-        run: |
-          echo "== .next =="
-          ls -lah .next || echo "No .next"
-          echo "== public =="
-          ls -lah public || echo "No public"
-          echo "== package.json =="
-          ls -lah package.json || echo "No package.json"
-
       # 5️⃣ Deploy built files to Hostland via SCP
       - name: Deploy built files to Hostland
         uses: appleboy/scp-action@v0.1.7
@@ -50,7 +40,7 @@ jobs:
           port: ${{ secrets.HOSTLAND_PORT }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           source: "./.next"
-          target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
+          target: "~/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
           debug: true
 
       # 6️⃣ Install production dependencies on Hostland
