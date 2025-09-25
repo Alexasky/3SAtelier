@@ -53,6 +53,7 @@ jobs:
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           port: 1024
           script: |
+            cd /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next
             /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/bin/node \
               /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/lib/node_modules/npm/bin/npm-cli.js install --omit=dev
 
