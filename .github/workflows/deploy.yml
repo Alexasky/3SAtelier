@@ -37,11 +37,12 @@ jobs:
         with:
           host: ${{ secrets.HOSTLAND_HOST }}
           username: ${{ secrets.HOSTLAND_USER }}
-          port: ${{ secrets.HOSTLAND_PORT }}
+          port: 1024
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           source: "./.next"
-          target: "~/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
+          target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
           debug: true
+          overwrite: true
 
       # 6️⃣ Install production dependencies on Hostland
       - name: Install production dependencies
