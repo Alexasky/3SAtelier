@@ -40,7 +40,7 @@ jobs:
           port: 1024
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           source: "./.next, ./public, ./package.json, ./.env.production"
-          target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
+          target: "/home/${{ secrets.HOSTLAND_USER }}/3satelier.ru/projects/3satelier"
           debug: true
           overwrite: true
 
@@ -53,9 +53,9 @@ jobs:
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           port: 1024
           script: |
-            cd /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next
-            /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/bin/node \
-              /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/node/v22.4.1/lib/node_modules/npm/bin/npm-cli.js install --omit=dev
+            cd /home/${{ secrets.HOSTLAND_USER }}/3satelier.ru/projects/3satelier
+            /home/${{ secrets.HOSTLAND_USER }}/3satelier.ru/node/v22.4.1/bin/node \
+              /home/${{ secrets.HOSTLAND_USER }}/3satelier.ru/node/v22.4.1/lib/node_modules/npm/bin/npm-cli.js install --omit=dev
 
       # 7️⃣ Restart your app on Hostland (Passenger)
       - name: Restart app
@@ -66,4 +66,4 @@ jobs:
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
           port: 1024
           script: |
-            touch /home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next/tmp/restart.txt
+            touch /home/${{ secrets.HOSTLAND_USER }}/3satelier.ru/projects/3satelier/tmp/restart.txt
