@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.HOSTLAND_USER }}
           port: ${{ secrets.HOSTLAND_PORT }}
           key: ${{ secrets.HOSTLAND_SSH_KEY }}
-          source: ".next public package.json"
+          source: "./.next public package.json"
           target: "/home/${{ secrets.HOSTLAND_USER }}/cms.housebetongroup.ru/projects/cms-housebetongroup-next"
           debug: true
 
