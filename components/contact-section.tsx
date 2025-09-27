@@ -60,7 +60,7 @@ export function ContactSection() {
                     <Mail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-card-foreground">Электронная почта</h4>
-                      {/* <p className="text-muted-foreground">Скоро появится</p> */}
+                      <p className="text-muted-foreground">info@3satelier.ru</p>
                     </div>
                   </div>
                 </CardContent>

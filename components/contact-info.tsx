@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
-import { MapPin, Clock, Phone, MessageCircle } from "lucide-react"
+import { MapPin, Phone, MessageCircle } from "lucide-react"
 
 export function ContactInfo() {
   const contactDetails = [
