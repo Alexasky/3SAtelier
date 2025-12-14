@@ -1,18 +1,23 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, ContactFormData } from "@/lib/validation";
 import { Button } from "@/components/ui/button";
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
+import { Checkbox } from './ui/checkbox';
+import LinkContent from './link-content';
 
 export default function ContactForm() {
   const [status, setStatus] = useState({ loading: false, success: null as string | null, error: null as string | null });
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
+  const { register, control, handleSubmit, reset, clearErrors, formState: { errors } } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      agreeTerms: false,
+    },
   });
 
   const onSubmit = async (data: ContactFormData) => {
@@ -30,6 +35,7 @@ export default function ContactForm() {
       if (res.ok) {
         setStatus({ loading: false, success: resData.message, error: null });
         reset();
+        clearErrors();
       } else {
         setStatus({ loading: false, success: null, error: resData.message || "Ошибка при отправке" });
       }
@@ -82,6 +88,24 @@ export default function ContactForm() {
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
       </div>
 
+      <div className="flex items-center space-x-2 flex-wrap">
+        <Controller
+          name="agreeTerms"
+          control={control}
+          render={({ field }) => (
+            <Checkbox
+              id="agreeTerms"
+              checked={field.value}
+              onCheckedChange={(checked) => field.onChange(checked === true)}
+            />
+          )}
+        />
+        <label htmlFor="agreeTerms" className='text-sm font-medium text-card-foreground'>Я согласен с <LinkContent href="/privacy-policy">Политикой конфиденциальности</LinkContent></label>
+        {errors.agreeTerms && (
+          <p className="text-red-600 text-sm w-full">{errors.agreeTerms.message}</p>
+        )}  
+      </div>
+      
       <Button
         type="submit"
         className="w-full bg-accent hover:bg-accent/90 text-accent-foreground flex justify-center items-center cursor-pointer"
